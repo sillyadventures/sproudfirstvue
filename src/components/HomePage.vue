@@ -8,12 +8,12 @@
 </template>
 
 <script>
-export default {
-  name: "HomePage",
-  data() {
-    return {
-      msg: "Type Something Here"
-    };
+  export default {
+    name: 'HomePage',
+    data () {
+      return {
+        msg: 'Type Something Here'
+      }
+    }
   }
-};
 </script>

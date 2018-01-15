@@ -17,6 +17,10 @@ describe('HomePage', () => {
     input.element.value = 'Something'
     input.trigger('input')
 
-    expect(wrapper.find('h2').text).toBe('Something')
+    expect(wrapper.find('h2').text()).toBe('Something')
+  })
+
+  it('should render a template message', () => {
+    expect(wrapper.find('h3').text()).toBe('This is pretty cool huh')
   })
 })
