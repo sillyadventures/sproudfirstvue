@@ -18,6 +18,7 @@
       return {
         counter: 0,
         move: 0,
+        moveup: true,
         msg: 'You loaded this page on ' + new Date().toLocaleString(),
       }
     },
@@ -29,24 +30,30 @@
         const x = Math.floor(Math.random() * 256)
         const y = Math.floor(Math.random() * 256)
         const z = Math.floor(Math.random() * 256)
-        const bgColor = 'rgb(' + x + ',' + y + ',' + z + ')'
+        const bgColor = `rgb(${x},${y},${z})`
         const c = document.getElementById('count')
-        console.log(bgColor)
         c.style.background = bgColor
       },
       changeRotate () {
         const b = document.getElementById('box')
-        const degree = 'rotate(' + this.counter * 15 + 'deg)'
-        console.log(degree)
+        const degree = `rotate(${this.counter * 15}deg)`
         b.style.transform = degree
       },
       changeTranslate () {
         const m = document.getElementById('boxmove')
-        if (this.move < 20) {
-          this.move += 1
+        if (this.moveup) {
+          this.move++
+          if (this.move >= 18)
+            this.moveup = false
         }
-        const translate = 'translate(' + this.move * 5 + '%)'
-        console.log(this.move)
+        else {
+          this.move--
+          if (this.move <= 0)
+            this.moveup = true
+        }
+
+        const translate = `translate(${this.move * 5}%)`
+        console.log(this.moveup)
         m.style.transform = translate
       },
       change () {
