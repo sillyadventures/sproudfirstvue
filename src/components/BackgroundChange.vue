@@ -29,25 +29,23 @@
         const x = Math.floor(Math.random() * 256)
         const y = Math.floor(Math.random() * 256)
         const z = Math.floor(Math.random() * 256)
-        const bgColor = 'rgb(' + x + ',' + y + ',' + z + ')'
+        const bgColor = `rgb(${x}, ${y}, ${z})`
         const c = document.getElementById('count')
-        console.log(bgColor)
         c.style.background = bgColor
       },
       changeRotate () {
         const b = document.getElementById('box')
-        const degree = 'rotate(' + this.counter * 15 + 'deg)'
-        console.log(degree)
-        b.style.transform = degree
+
+        b.style.transform = `rotate(${this.counter * 15}deg)`
       },
       changeTranslate () {
         const m = document.getElementById('boxmove')
+
         if (this.move < 20) {
           this.move += 1
         }
-        const translate = 'translate(' + this.move * 5 + '%)'
-        console.log(this.move)
-        m.style.transform = translate
+
+        m.style.transform = `translate(${this.move * 5}%)`
       },
       change () {
         this.changeCounter()
