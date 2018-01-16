@@ -39,6 +39,9 @@
         const degree = `rotate(${this.counter * 15}deg)`
         b.style.transform = degree
       },
+
+
+
       changeTranslate () {
         const m = document.getElementById('boxmove')
         if (this.moveup) {
