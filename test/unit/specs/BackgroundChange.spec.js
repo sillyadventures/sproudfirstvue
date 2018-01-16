@@ -33,6 +33,16 @@ describe('BackgroundChange', () => {
   })
 
   it('should change to a random background colour', () => {
-    expect(wrapper.find('#counter').hasStyle('background-color', 'rgba(0, 0, 0)')).toBe(true)
+    const x = Math.floor(Math.random() * 255)
+    const y = Math.floor(Math.random() * 255)
+    const z = Math.floor(Math.random() * 255)
+
+    const bgColor = `rgb(${x}, ${y}, ${z})`
+
+    expect(wrapper.find('#count').hasStyle('background-color', bgColor)).toBe(false)
+  })
+
+  it('should have transform properties', () => {
+    expect(wrapper.find('#boxmove').hasStyle('transform', 'translate(0, 0, 0)')).toBe(true)
   })
 })
