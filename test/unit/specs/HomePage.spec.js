@@ -21,6 +21,6 @@ describe('HomePage', () => {
   })
 
   it('should render a template message', () => {
-    expect(wrapper.find('h3').text()).toBe('This is pretty cool huh')
+    expect(wrapper.find('h3').text()).toBe('Hover over the Logo to change background')
   })
 })
