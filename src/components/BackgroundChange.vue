@@ -1,11 +1,11 @@
 <template>
     <div class="change">
         <h1>Change Background</h1>
-        <h2 v-bind:style="bgc">{{ counter}}</h2>
+        <h2 class="counter">{{ counter}}</h2>
         <br>
-        <button v-on:click="changeColor">Add to Counter</button>
+        <button @click="change">Add to Counter</button>
         <p>The button above has been clicked {{ counter }} times.</p>
-        <div style="width: 200px; height: 200px;" v-bind:style="styles"></div>
+        <div class="box"></div>
     </div>
 </template>
 
@@ -16,14 +16,6 @@ export default {
     return {
       counter: 0,
       msg: 'You loaded this page on ' + new Date().toLocaleString(),
-      bgc: {
-        backgroundColor: 'blue'
-      },
-      styles: {
-        backgroundColor: 'blue',
-        width: '200px',
-        height: '200px'
-      }
     }
   },
   methods: {
@@ -31,8 +23,30 @@ export default {
       this.counter += 1;
     },
     changeColor () {
-      alert("Hello Sir")
+      var x = Math.floor(Math.random() * 256);
+      var y = Math.floor(Math.random() * 256);
+      var z = Math.floor(Math.random() * 256);
+      var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+      console.log(bgColor);
+      document.counter.style.background = bgColor;
+    },
+    change () {
+      this.changeCounter ()
+      this.changeColor ()
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .counter {
+      background-color: blueviolet;
+      width: 100%;
+      height: 40px;
+  }
+  .box {
+    background-color: indianred;
+      width: 200px;
+      height: 200px;
+  }
+</style>
