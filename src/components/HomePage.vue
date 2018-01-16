@@ -1,9 +1,8 @@
 <template>
-    <div class="home-1">
+    <div class="home">
         <h1>Home Page</h1>
         <input type="text" id="input" v-model="msg"/>
         <h2>{{ msg }}</h2>
-        <h3>Hover over the Logo to change background</h3>
     </div>
 </template>
 
